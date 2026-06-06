@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your cart - Knitknotkart</title>
+    <link rel="icon" href="fav_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="banner"> <img src="nav.png">
+
+            <div class="brand">
+               
+                <div class="text">
+                    <h2>Knitknotkart</h2>
+                    <p>Crochet Patterns & Plushie Toys</p>
+                </div>
+
+               
+                <div class="nav-right-content">
+
+                   
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="About.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                    
+                    <a href="#" id="authLink" class="auth-link" style="text-decoration: none;">
+                        <div class="auth-nav-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span id="authText" class="auth-text">Login</span>
+                        </div>
+                    </a>
+
+                    
+                    <a href="cart.html" class="cart-link" style="text-decoration: none;">
+                        <div class="cart-nav-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </a>
+
+                   
+                    <div class="menu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-menu-icon lucide-menu">
+                            <path d="M4 5h16" />
+                            <path d="M4 12h16" />
+                            <path d="M4 19h16" />
+                        </svg>
+                    </div>
+
+                </div>
+
+                
+                <div class="mobile-menu">
+                    <a href="index.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="authModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal-btn" onclick="closeLoginModal()">&times;</button>
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Welcome Back</h2>
+                <p id="modalSubtitle">Login on Knitknotkart</p>
+            </div>
+
+            <form id="authForm" onsubmit="handleAuthSubmit(event)">
+                <div class="input-group" id="nameInputGroup" style="display: none;">
+                    <label for="authName">Full Name</label>
+                    <input type="text" id="authName" placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label for="authEmail">Email Address</label>
+                    <input type="email" id="authEmail" required placeholder="example@gmail.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="authPassword">Password</label>
+                    <input type="password" id="authPassword" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" id="authSubmitBtn" class="auth-submit-btn">Login</button>
+            </form>
+
+            <div class="modal-footer">
+                <p id="toggleAuthText">No account? <a href="#" onclick="toggleAuthMode(event)">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="cart-wrapper">
+        <h1 class="page-title">Shopping Cart</h1>
+
+        <div class="cart-layout">
+            <div id="cart-items-container" class="cart-items-list">
+            </div>
+
+            <div class="order-summary-box">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Total Items:</span>
+                    <span id="total-items-count">0</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total Amount:</span>
+                    <span class="simple-amount" id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                <a href="products.html" class="continue-shopping">← Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>KnitKnotKart</h2>
+                <p>Crochet Patterns & Plushie Toys</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-connect">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/knitknotkart/" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+
+                    <a href="mailto:knitknotkart@gmail.com?subject=KnitKnotKart%20Inquiry" target="_blank"
+                        class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="M22 7l-10 7L2 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom"
+            style="border-top: 1px solid rgba(139, 94, 60, 0.1); padding-top: 20px; margin-top: 20px;">
+            <div class="legal-links"
+                style="margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 0.85rem;">
+                <a href="privacy.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Privacy
+                    Policy</a> |
+                <a href="terms.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Terms &
+                    Conditions</a> |
+                <a href="refund.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Refund &
+                    Cancellation</a> |
+                <a href="shipping.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Shipping &
+                    Delivery</a>
+            </div>
+            Handmade with love
+            <br>
+            © 2026 KnitKnotKart · All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

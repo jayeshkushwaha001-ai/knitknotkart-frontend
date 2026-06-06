@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knit knot kart | Crochet Patterns | Plushie Toys</title>
+    <link rel="icon" href="fav_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="banner"> <img src="nav.png">
+
+            <div class="brand">
+                
+                <div class="text">
+                    <h2>Knitknotkart</h2>
+                    <p>Crochet Patterns & Plushie Toys</p>
+                </div>
+
+                
+                <div class="nav-right-content">
+
+                  
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="About.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                   
+                    <a href="#" id="authLink" class="auth-link" onclick="openLoginModal()"
+                        style="text-decoration: none;">
+                        <div class="auth-nav-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span id="authText" class="auth-text">Login</span>
+                        </div>
+                    </a>
+
+                    
+                    <a href="cart.html" class="cart-link" style="text-decoration: none;">
+                        <div class="cart-nav-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </a>
+
+                    
+                    <div class="menu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-menu-icon lucide-menu">
+                            <path d="M4 5h16" />
+                            <path d="M4 12h16" />
+                            <path d="M4 19h16" />
+                        </svg>
+                    </div>
+
+                </div>
+
+               
+                <div class="mobile-menu">
+                    <a href="index.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="authModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal-btn" onclick="closeLoginModal()">&times;</button>
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Welcome Back</h2>
+                <p id="modalSubtitle">Login on Knitknotkart</p>
+            </div>
+
+            <form id="authForm" onsubmit="handleAuthSubmit(event)">
+                <div class="input-group" id="nameInputGroup" style="display: none;">
+                    <label for="authName">Full Name</label>
+                    <input type="text" id="authName" placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label for="authEmail">Email Address</label>
+                    <input type="email" id="authEmail" required placeholder="example@gmail.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="authPassword">Password</label>
+                    <input type="password" id="authPassword" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" id="authSubmitBtn" class="auth-submit-btn">Login</button>
+            </form>
+
+            <div class="modal-footer">
+                <p id="toggleAuthText">No account? <a href="#" onclick="toggleAuthMode(event)">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="hero">
+        <div class="cards-container">
+
+            <div class="card">
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <div class="card-img img1"></div>
+                        <div class="top-text">MADE</div>
+                        <div class="bottom-text">BUY</div>
+                    </div>
+                    <div class="card-back">
+                        KNIT
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-img img2"></div>
+                        <div class="top-text">BY</div>
+                        <div class="bottom-text">FOR</div>
+                    </div>
+                    <div class="card-back">
+                        KNOT
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-img img3"></div>
+                        <div class="top-text">LOVE</div>
+                        <div class="bottom-text">LOVED ONES</div>
+                    </div>
+                    <div class="card-back">
+                        KART
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="best-sellers">
+
+        <h2 class="section-title">
+            Best Sellers
+        </h2>
+
+        <div class="bestseller-card">
+
+            <!-- IMAGE -->
+            <div class="product-image">
+                <img src="rose.jpg">
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+            <div class="product-details">
+                <h3>Moon Petal Rose</h3>
+
+                <p>
+                    A delicate white crochet rose woven with softness and quiet love.
+                    A forever bloom that never fades — perfect for heartfelt gifting,
+                    room decor, or keeping a little handmade warmth close to you.
+                </p>
+
+                <div class="product-buttons">
+
+                    <a href="products.html?product=moon-petal-rose" class="view-home-btn">
+
+                        View Product
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- REEL -->
+            <div class="product-video">
+
+                <video autoplay muted loop playsinline preload="none">
+
+                    <source data-src="reel1.mp4" type="video/mp4">
+
+                </video>
+             
+            </div>
+
+        </div>
+
+
+
+        <div class="bestseller-card">
+
+            <!-- IMAGE -->
+            <div class="product-image">
+                <img src="keychain.jpg">
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="product-details">
+
+                <h3>Bumble & Bloom Charm</h3>
+
+                <p>
+                    Layered dual-charm setup featuring detailed white wings, yellow-black stripes, and a sturdy metallic
+                    swivel clasp.
+                </p>
+
+                <div class="product-buttons">
+
+                    <a href="products.html?product=bumble" class="view-home-btn">
+
+                        View Product
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+            <!-- REEL -->
+            <div class="product-video">
+
+                <video autoplay muted loop playsinline preload="none">
+
+                    <source data-src="keychain.mp4" type="video/mp4">
+
+                </video>
+
+
+            </div>
+
+        </div>
+
+        <div class="bestseller-card">
+
+            <!-- IMAGE -->
+            <div class="product-image">
+                <img src="earrings.jpg">
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="product-details">
+
+                <h3>The Red Twister Hooks</h3>
+
+                <p>
+                    Long, tightly-coiled fiery red yarn spirals on gold hooks. Bold look, feather-light weight.
+                </p>
+
+                <div class="product-buttons">
+
+                    <a href="products.html?product=red_twister" class="view-home-btn">
+
+                        View Product
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+            <!-- REEL -->
+            <div class="product-video">
+
+                <video autoplay muted loop playsinline preload="none">
+
+                    <source data-src="earrings.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </div>
+        <div class="bestseller-card">
+
+            <!-- IMAGE -->
+            <div class="product-image">
+                <img src="hairband.webp">
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="product-details">
+
+                <h3>Tulip Kiss Hairband </h3>
+
+                <p>
+                    Literally a tiny field of tulips woven into a headband. Super lightweight, breathable, and features
+                    tie-up straps to custom-fit your daily style aesthetic.
+                </p>
+
+                <div class="product-buttons">
+
+                    <a href="products.html?product=kiss" class="view-home-btn">
+
+                        View Product
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+            <!-- REEL -->
+            <div class="product-video">
+
+                <video autoplay muted loop playsinline preload="none">
+
+                    <source data-src="hairband.mp4" type="video/mp4">
+
+                </video>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="video-popup">
+
+        <span class="close-video">
+            ✕
+        </span>
+
+        <video loop playsinline preload="metadata" class="popup-video">
+        </video>
+        <div class="popup-sound">
+            🔇
+        </div>
+    </div>
+
+
+    <section class="categories-section">
+
+        <h2 class="categories-heading">
+            Explore Categories
+        </h2>
+
+        <div class="categories-grid">
+
+            <!-- FLOWERS -->
+            <a href="products.html?category=Flowers" class="category-card">
+
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-flower2-icon lucide-flower-2">
+                        <path
+                            d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1" />
+                        <circle cx="12" cy="8" r="2" />
+                        <path d="M12 10v12" />
+                        <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" />
+                        <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" />
+                    </svg>
+                </div>
+
+                <h3>
+                    Flowers
+                </h3>
+
+                <p>
+                    Roses, tulips and handmade blooms.
+                </p>
+
+                <span>
+                    See Collection →
+                </span>
+
+            </a>
+
+            <!-- PLUSHIES -->
+            <a href="products.html?category=Plushies" class="category-card">
+
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-panda-icon lucide-panda">
+                        <path d="M11.25 17.25h1.5L12 18z" />
+                        <path d="m15 12 2 2" />
+                        <path d="M18 6.5a.5.5 0 0 0-.5-.5" />
+                        <path
+                            d="M20.69 9.67a4.5 4.5 0 1 0-7.04-5.5 8.35 8.35 0 0 0-3.3 0 4.5 4.5 0 1 0-7.04 5.5C2.49 11.2 2 12.88 2 14.5 2 19.47 6.48 22 12 22s10-2.53 10-7.5c0-1.62-.48-3.3-1.3-4.83" />
+                        <path d="M6 6.5a.495.495 0 0 1 .5-.5" />
+                        <path d="m9 12-2 2" />
+                    </svg>
+                </div>
+
+                <h3>
+                    Plushies
+                </h3>
+
+                <p>
+                    Soft toys stitched with warmth.
+                </p>
+
+                <span>
+                    See Collection →
+                </span>
+
+            </a>
+
+            <!-- WEARABLES -->
+            <a href="products.html?category=Wearables" class="category-card">
+
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shirt-icon lucide-shirt">
+                        <path
+                            d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                    </svg>
+                </div>
+
+                <h3>
+                    Wearables
+                </h3>
+
+                <p>
+                    Cozy crochet fashion and comfort.
+                </p>
+
+                <span>
+                    See Collection →
+                </span>
+
+            </a>
+
+            <!-- ACCESSORIES -->
+            <a href="products.html?category=Accessories" class="category-card">
+
+                <div class="category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+
+                        <path d="M6 3h12l4 5-10 13L2 8l4-5z" />
+                        <path d="M2 8h20" />
+                        <path d="M10 3l2 5 2-5" />
+                        <path d="M6 3l6 18 6-18" />
+
+                    </svg>
+                </div>
+
+                <h3>
+                    Accessories
+                </h3>
+
+                <p>
+                    Cute details for everyday charm.
+                </p>
+
+                <span>
+                    See Collection →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="instagram-cta">
+
+        <h3 class="cta-label">
+            Custom Creations
+        </h3>
+
+        <h2>
+            Still dreaming of
+            something handmade?
+        </h2>
+
+        <p>
+            From custom plushies to heartfelt crochet gifts,
+            every idea deserves a little handmade magic.
+            Let’s create something special together.
+        </p>
+
+        <a href="https://ig.me/m/knitknotkart" class="custom-btn-main">
+
+            Create Your Custom Order
+        </a>
+
+    </section>
+    <section class="brand-story-section">
+
+        <h2 class="story-heading">
+            Our Story ♡
+        </h2>
+
+        <section class="brand-story">
+
+            <div class="story-image">
+                <img src="about.png">
+            </div>
+
+            <div class="story-text">
+
+                <h2>
+                    Crafted with love,
+                    for you.
+                </h2>
+
+                <p>
+                    KnitKnotKart celebrates handmade warmth through crochet creations
+                    stitched with patience, comfort and creativity.
+                    From flowers and accessories to cozy handmade treasures,
+                    every piece carries soft details and heartfelt care.
+                </p>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>KnitKnotKart</h2>
+                <p>Crochet Patterns & Plushie Toys</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-connect">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/knitknotkart/" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+
+                    <a href="mailto:knitknotkart@gmail.com?subject=KnitKnotKart%20Inquiry" target="_blank" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="M22 7l-10 7L2 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom" style="border-top: 1px solid rgba(139, 94, 60, 0.1); padding-top: 20px; margin-top: 20px;">
+            <div class="legal-links" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 0.85rem;">
+                <a href="privacy.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Privacy Policy</a> | 
+                <a href="terms.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Terms & Conditions</a> | 
+                <a href="refund.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Refund & Cancellation</a> | 
+                <a href="shipping.html" style="color: #7d6758; text-decoration: none; transition: 0.3s;">Shipping & Delivery</a>
+            </div>
+            Handmade with love
+            <br>
+            © 2026 KnitKnotKart · All Rights Reserved
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+</body>
+
+</html>

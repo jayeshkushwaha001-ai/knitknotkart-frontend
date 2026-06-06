@@ -1,0 +1,299 @@
+/* --- CHECKOUT PAGE STYLING (KnitKnotKart Aesthetic) --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #FFF9F3 0%, #FFF6EF 45%, #FFF3EA 100%);
+    font-family: sans-serif;
+    color: #333;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+.checkout-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Steps Cards Layout (Frosted Glass) */
+.step-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 170, 142, 0.25);
+    box-shadow: 0 8px 25px rgba(139, 94, 60, 0.05);
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.step-card.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    background: #8B5E3C;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.step-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #8B5E3C;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Address Input Styles */
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #7b5e57;
+    font-weight: 600;
+}
+
+.input-group input, .input-group textarea {
+    padding: 12px 15px;
+    border: 1px solid rgba(212, 170, 142, 0.4);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #8B5E3C;
+    box-shadow: 0 0 8px rgba(139, 94, 60, 0.15);
+}
+
+
+
+/* Premium Buttons */
+.prime-btn {
+    padding: 14px;
+    background: #8B5E3C;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(139, 94, 60, 0.15);
+}
+
+.prime-btn:hover {
+    background: #a67b5b;
+    transform: translateY(-1px);
+}
+
+/* Payment Card Section Container */
+#step-payment-card {
+    background: #fdfbf7; /* Premium off-white luxury feel */
+    border: 1px solid #eaddcf;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#step-payment-card h3 {
+    color: #3e2723; /* Deep warm brown */
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+/* Secure Gateway Banner */
+.secure-tag {
+    background-color: #f5efe6;
+    border-left: 4px solid #8B5E3C; /* Brand Color Accent */
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.secure-tag p {
+    color: #5d4037;
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Payable Row Display */
+.payable-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px dashed #eaddcf;
+    border-bottom: 1px dashed #eaddcf;
+    margin-bottom: 24px;
+}
+
+.payable-row span {
+    font-size: 1rem;
+    color: #795548;
+}
+
+#payment-payable-amount {
+    font-size: 1.4rem;
+    color: #8B5E3C; /* Highlighted premium price */
+    font-weight: 700;
+}
+
+/* Action Buttons Grid */
+.payment-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #8B5E3C;
+    color: #8B5E3C;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #f5efe6;
+}
+
+.btn-primary {
+    background: #8B5E3C; /* Luxury Solid Bronze Brown */
+    border: none;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(139, 94, 60, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #734d31;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(139, 94, 60, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #bcaaa4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* State management classes */
+.hidden {
+    display: none !important;
+}
+
+.checkout-card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Right Side Summary Bar Box */
+.order-summary-pane {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 170, 142, 0.3);
+    box-shadow: 0 8px 25px rgba(139, 94, 60, 0.08);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.order-summary-pane h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #8B5E3C;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(139, 94, 60, 0.15);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-list {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.summary-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.total-payable {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed rgba(139, 94, 60, 0.3);
+    padding-top: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #8B5E3C;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .checkout-container { grid-template-columns: 1fr; }
+}

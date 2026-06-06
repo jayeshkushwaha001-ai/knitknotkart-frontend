@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="routeGuard.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - KnitKnotKart</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="icon" href="fav_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+    <main class="checkout-wrapper">
+        <div class="checkout-container">
+
+            <div class="checkout-steps">
+
+                <div class="step-card active" id="step-address-card">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <h2>Delivery Address & Details</h2>
+                    </div>
+                    <form id="address-form" class="step-content">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="cust-name" required placeholder="Jayesh Kushwaha">
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" id="cust-email" required placeholder="jayesh@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="cust-phone" required placeholder="10-digit mobile number"
+                                pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                        <div class="input-group">
+                            <label>Shipping Address</label>
+                            <textarea id="cust-address" rows="3" required
+                                placeholder="Flat, House no., Building, Company, Apartment, Street/Locality"></textarea>
+                        </div>
+                        <button type="submit" class="prime-btn">Proceed to Payment</button>
+                    </form>
+                </div>
+
+                <div id="step-payment-card" class="checkout-card disabled">
+                    <h3>2. PAYMENT METHOD</h3>
+                    <div id="payment-content" class="hidden">
+                        <div class="secure-tag">
+                            <p>🔒 All transactions are secure and encrypted via Razorpay Gateway.</p>
+                        </div>
+
+                        <div class="payable-row">
+                            <span>Amount to Pay:</span>
+                            <strong id="payment-payable-amount">₹0</strong>
+                        </div>
+
+                        <div class="payment-buttons">
+                            <button id="back-to-address" class="btn-secondary">← Back to Address</button>
+                            <button id="place-order-btn" class="btn-primary">Pay & Place Order</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="order-summary-pane">
+                <h2>Price Details</h2>
+                <div class="summary-list" id="summary-items-list">
+                </div>
+                <div class="price-row total-payable">
+                    <span>Total Payable</span>
+                    <span id="checkout-total-price" style="font-family: sans-serif; font-size: 1.1rem;">₹0</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="checkout.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
