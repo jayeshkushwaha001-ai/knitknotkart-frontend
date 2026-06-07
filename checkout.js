@@ -142,6 +142,12 @@ placeOrderBtn.addEventListener("click", async () => {
     placeOrderBtn.disabled = true;
 
     try {
+        // --- NAYA LOGIC YAHAN SE SHURU HAI ---
+        // 1. Sabse pehle backend se chupke se apni Live Key ID mangwao
+        const keyResponse = await fetch("https://knitknotkart-backend.onrender.com/api/payment/get-key");
+        const keyData = await keyResponse.json();
+
+        // 2. Ab Backend ko bolo order banane ke liye
         const backendUrl = "https://knitknotkart-backend.onrender.com/api/payment/order";
         const response = await fetch(backendUrl, {
             method: "POST",
@@ -159,8 +165,9 @@ placeOrderBtn.addEventListener("click", async () => {
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+        // 3. Razorpay ka popup kholo (Yahan backend se aayi key use hogi)
         const options = {
-            "key": "rzp_test_SwLKjtTZKqyJmR",
+            "key": keyData.key, // <-- DEKH BHAI! Hardcoded key hata di hai
             "amount": orderData.amount,
             "currency": "INR",
             "name": "KnitKnotKart",
@@ -190,11 +197,8 @@ placeOrderBtn.addEventListener("click", async () => {
 
                     if (verificationResult.success) {
                         alert("🎉 Order Placed Successfully! Payment Verified.");
-
-
                         localStorage.removeItem("cart"); 
                         window.location.href = "index.html"; 
-
                     } else {
                         alert("❌ Security Alert: Payment verification failed!");
                     }
