@@ -160,7 +160,7 @@ placeOrderBtn.addEventListener("click", async () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         const options = {
-            "key": "rzp_live_SymomLyUnYTbJm",
+            "key": "rzp_test_SwLKjtTZKqyJmR",
             "amount": orderData.amount,
             "currency": "INR",
             "name": "KnitKnotKart",
